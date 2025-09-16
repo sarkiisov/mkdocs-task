@@ -1,0 +1,15 @@
+site_name: Cyberpunk 2077 Вселенная
+nav:
+  - Главная: index.md
+  - Найт-Сити: night_city.md
+  - Герои: heroes.md
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - toc.integrate
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - attr_list
