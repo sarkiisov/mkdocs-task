@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ config.site_description }}" />
+    <meta name="author" content="{{ config.site_author }}" />
+    <link
+      rel="icon"
+      href="{{ base_url }}/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <title>
+      {% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}
+    </title>
+    {%- for path in config.extra_css %}
+    <link href="{{ path | url }}" rel="stylesheet" />
+    {%- endfor %}
+  </head>
+  <body>
+    <header>
+      <nav class="menu">
+        <ul>
+          {% for item in nav %}
+          <li class="{% if item.is_active %}active{% endif %}">
+            <a href="{{ item.url | url }}" title="{{ item.title }}"
+              >{{ item.title }}</a
+            >
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside>
+        <nav class="toc">
+          <ul>
+            {% macro render_toc(items) %} {% for item in items %}
+            <li>
+              <a href="#{{ item.id }}">{{ item.title }}</a>
+              {% if item.children %}
+              <ul>
+                {{ render_toc(item.children) }}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %} {% endmacro %} {{ render_toc(page.toc) }}
+          </ul>
+        </nav>
+      </aside>
+      <article>{{ page.content }}</article>
+    </main>
+    <footer>
+      <p>&copy; {{ config.site_name }}</p>
+    </footer>
+    {%- for script in config.extra_javascript %} {{ script | script_tag }} {%-
+    endfor %}
+  </body>
+</html>

@@ -1,15 +1,27 @@
-site_name: Cyberpunk 2077 Вселенная
+strict: true
+site_name: Вселенная Cyberpunk 2077
+site_description: "Этот проект посвящен вселенной Cyberpunk 2077"
+site_author: "Никита Саркисов"
 nav:
   - Главная: index.md
   - Найт-Сити: night_city.md
   - Герои: heroes.md
 theme:
-  name: material
-  features:
-    - navigation.sections
-    - toc.integrate
+  name: null
+  custom_dir: "custom_theme/"
+watch:
+  - custom_theme
+extra_css:
+  - css/styles.css
 markdown_extensions:
   - toc:
       permalink: true
       toc_depth: 3
   - attr_list
+plugins:
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      css_files:
+        - css/styles.css
