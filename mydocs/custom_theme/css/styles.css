@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url("../assets/fonts/Roboto.ttf") format("truetype");
+  src: url("assets/fonts/Roboto.ttf") format("truetype");
 }
 
 :root {
@@ -130,11 +130,11 @@ h3::before {
   height: 10px;
   bottom: 0;
   background-color: currentColor;
-  mask-image: url("../assets/images/header_bottom.svg");
+  mask-image: url("assets/images/header_bottom.svg");
   mask-repeat: no-repeat;
   mask-position: 50% 105%;
   mask-size: 100% 5px;
-  -webkit-mask-image: url("../assets/images/header_bottom.svg");
+  -webkit-mask-image: url("assets/images/header_bottom.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: 50% 105%;
   -webkit-mask-size: 100% 5px;
